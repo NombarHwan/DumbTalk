@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='chat.js') }}" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<audio id="msg" src="{{ url_for('static', filename='msg.mp3') }}" preload="auto"></audio>
+</head>
+<body>
+    <div id="login">
+        <h1>Chat Application</h1>
+        <input id="username" placeholder="Enter your name...">
+        <button onclick="login()">Login</button>
+    </div>
+    
+    <div id="chat" style="display: none;">
+        <div id="messages"></div>
+        <div style="display: flex; width: 100%;">
+            <input id="message" placeholder="Type your message here..." style="flex: 1; margin-right: 10px;">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</body>
+</html>
